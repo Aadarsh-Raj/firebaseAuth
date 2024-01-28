@@ -1,6 +1,10 @@
 import React from "react";
 import LoginPage from "./LoginPage";
-import './Style/main.css'
+import "./Style/main.css";
+import SignUp from "./SignUp";
+import AuthProvider from "../Context/AuthProvider";
+// import firebase from "./firebase";
+
 const Main = () => {
   return (
     <>
@@ -8,7 +12,10 @@ const Main = () => {
         <header className="header">
           <div className="box">This is Home page</div>
           <div className="login-btn">
-            <LoginPage />
+            <AuthProvider>
+              <SignUp />
+              <LoginPage />
+            </AuthProvider>
           </div>
         </header>
       </main>
