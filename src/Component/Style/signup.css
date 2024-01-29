@@ -1,0 +1,22 @@
+.signup-page{
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+color: white;
+background-color: purple;
+}
+.signup-page a{
+    color: gray;
+}
+.signup-form{
+display: flex;
+flex-direction: column;
+gap: 0.4rem;
+text-align: center;
+border: 2px solid red;
+padding: 1rem;
+border-radius: 1rem;
+}

@@ -2,22 +2,15 @@ import React from "react";
 import LoginPage from "./LoginPage";
 import "./Style/main.css";
 import SignUp from "./SignUp";
-import AuthProvider from "../Context/AuthProvider";
-// import firebase from "./firebase";
-
+import { Link } from "react-router-dom";
 const Main = () => {
   return (
     <>
       <main className="main">
-        <header className="header">
-          <div className="box">This is Home page</div>
-          <div className="login-btn">
-            <AuthProvider>
-              <SignUp />
-              <LoginPage />
-            </AuthProvider>
-          </div>
-        </header>
+       <h2>MERN STACK WEB DEVELOPER</h2>
+          <h3>Be a member of Us <Link to={"/signup"}>Click Here</Link></h3>
+          
+      
       </main>
     </>
   );

@@ -1,0 +1,23 @@
+.login-page{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: purple;
+}
+
+.login-container{
+    color: white;
+    display: flex;
+flex-direction: column;
+border: 2px solid red;
+padding: 1rem;
+border-radius: 1rem;
+text-align: center;
+}
+.login-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

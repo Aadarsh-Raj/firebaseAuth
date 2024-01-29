@@ -1,5 +1,7 @@
 import React,{useContext} from 'react'
 import { useAuth } from '../Context/AuthProvider';
+import './Style/signup.css'
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
 const authCtx = useAuth();
@@ -17,10 +19,10 @@ async function appendUser(e){
         return;
     }
     try {
-        const response = await authCtx.signUp(
+        const currentUser = await authCtx.signUp(
             email, password
         );
-        console.log(response);
+        authCtx.setCurrentUser(currentUser);
     } catch (error) {
         console.log(error);
     }
@@ -28,14 +30,15 @@ async function appendUser(e){
 
   return (
     <>
-    <div className="signup-container">
+    <div className="signup-page">
         <form action="" className="signup-form" onSubmit={(e)=>appendUser(e)}>
             <h2>Sign Up Here</h2>
             <input type="email" placeholder='Enter Your Id'/>
-            <input type="password" name="" id="" placeholder='Enter Your Password'/>
-            <input type="password" name="" id="" placeholder='Enter Your Password Again'/>
+            <input type="password"  placeholder='Enter Your Password'/>
+            <input type="password"  placeholder='Enter Your Password Again'/>
             <button>Submit</button>
         </form>
+        <h5>If already have an accout, <Link to={"/login"}>Log in from here</Link> </h5>
     </div>
     </>
   )
