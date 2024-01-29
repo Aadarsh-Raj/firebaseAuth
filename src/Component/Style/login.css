@@ -2,11 +2,15 @@
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: purple;
+    color: white;
 }
-
+.login-page a{
+    color: gray;
+}
 .login-container{
     color: white;
     display: flex;

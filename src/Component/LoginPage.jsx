@@ -1,8 +1,11 @@
 import React from "react";
 import { useAuth } from "../Context/AuthProvider";
 import "./Style/login.css";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 const LoginPage = () => {
   const authCtx = useAuth();
+  const navigate = useNavigate();
   async function handleLogin(e) {
     e.preventDefault();
     const email = e.target.children[0].value;
@@ -11,6 +14,7 @@ const LoginPage = () => {
     try {
       const currentUser = await authCtx.logIn(email, password);
       authCtx.setCurrentUser(currentUser);
+      navigate("/dashboard");
     } catch (error) {
       console.log(error);
     }
@@ -32,6 +36,7 @@ const LoginPage = () => {
             </form>
           </div>
         </div>
+        <h5>If you have not an account, <Link to={"/signup"}>Sign Up from here</Link> </h5>
       </div>
     </>
   );
